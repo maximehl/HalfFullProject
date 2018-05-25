@@ -26,7 +26,7 @@ $(document).ready(function(){
             "Talking through your thoughts and feelings with someone trained to listen might help!", "Go and sit in the sun! Feel the wind on your face, lie in the grass. " +
             "Remember, we are all parts of a grand, beautiful network of life!", "Try adopting a new hobby or skill.", "Try something you haven't done in a while.",
             "Vent! Let out your feelings. Write them down, scream into your pillow, talk to your parents, tell your friends, tell your dog, sing them out, tell a therapist, tell a stranger...",
-            "Eat something healthy! Physical health and mental health are closely related!", "Take a shower, or pamper yourself with a bath bomb.", "Paint your nails, dress up nicely... even if you don't go anywhere, looking nice feels nice!", "Make yourself some of your favorite food or drink, or go and get it--bring a friend, if you want!",
+            "Eat something healthy! Physical health and mental health are closely related!", "Get clean--take a shower, or pamper yourself with a bath bomb.", "Paint your nails, dress up nicely... even if you don't go anywhere, looking nice feels nice!", "Make yourself some of your favorite food or drink, or go and get it--bring a friend, if you want!",
             "Come out of your room. Even if you don't talk to your parents outright about what you're feeling, being with others often helps. Alone time is good, but company is too!", "Stick your head out the window and listen to the world around you. You're a big, important part of this big, important world!"
         ];
         //feeds a random suggestion from the list into the div
@@ -44,14 +44,14 @@ $(document).ready(function(){
     });
 
     $("#dia").on("click", function() {
-
+        var slides = $("#slidecontainer");
         if($(this).hasClass("show")) {
-            $("#slidecontainer").css({"opacity": "100"});
+            slides.css({"opacity": "100"});
             $(this).parent.click();
             $(this).removeClass("show");
-            $("#slidecontainer").click();
+            slides.click();
         } else {
-            $("#slidecontainer").css({"opacity": "0"});
+            slides.css({"opacity": "0"});
             $(this).addClass("show");
         }
     });
@@ -68,7 +68,7 @@ function toNextItem(inp) {
     var nextSlide;
 
     //holds all values of sliders for later calculation
-    SLIDE_VALS.push(parseInt(document.getElementById(thisId).value));
+    SLIDE_VALS.push(parseInt(document.getElementById(inp.attr("id")).value));
 
     //saves current id #
     var currentNum = parseInt(inp.attr("id")[inp.attr("id").length-1]);
