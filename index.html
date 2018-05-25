@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Half Full</title>
+    <link rel="stylesheet" type="text/css" href="HalfFullStyleSheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="nora.js"></script>
+</head>
+<body>
+
+    <div id="sideBar">
+        <div class="collapsible" id="resources">
+            <h3>Want to talk?</h3>
+            <p></p>
+            <ul>
+                <li>National Suicide Prevention Lifeline: 1-800-273-TALK (1-800-273-8255) (Free and confidential, 24/7)</li>
+                <li>Chat with the NSPL online over text at <a href = "http://www.suicidepreventionlifeline.org">their website</a> (Free and confidential, 24/7)</li>
+                <li>Call 911 for immediate help (Free and confidential, 24/7)</li>
+                <li>Crisis Text Line: Text “HOME” to 741741 (Free and confidential, 24/7)</li>
+                <li>Adolescent Suicide Hotline: 800-621-4000</li>
+                <li>Adolescent Crisis Intervention & Counseling Nineline / Suicide & Crisis Hotline: 1-800-999-9999 (Free and confidential)</li>
+                <li>Girls & Boys Town National Hotline: (800) 448-3000 (Free and confidential)</li>
+                <li>Text Girls & Boys Town: text voice to 20121 (Free and confidential)</li>
+                <li>Youth Crisis Hotline: 800-HIT-HOME (1-800-448-4663)</li>
+                <li>Suicide Hotline: 1-800-SUICIDE (784-2433)</li>
+                <li>Crisis support services of Alameda County: 1-800-309-2131 (Free and confidential, 24/7)</li>
+                <li>Alameda Text Line: TEXT SAFE TO 20121; 4:00 p.m. – 11:00 p.m., 7 days a week (Free and confidential)</li>
+                <li>Teen Line: 310-855-HOPE (310-855-4673) or (800) TLC-TEEN from 6pm to 10pm PST (Free and confidential)</li>
+                <li>Teen Line over text: Text "TEEN" to 839863, 6:00PM TO 9:00PM PST or send them an email or use the <a href = "https://teenlineonline.org/board/">message board</a> on their website (Free and confidential)</li>
+                <li>Help Finding a Therapist : 1-800-THERAPIST (1-800-843-7274) (Free and confidential)</li>
+                <li>Warmlines: If you need some general support, try calling one of <a href = "http://warmline.org/#california">these phone lines</a></li>
+            </ul>
+        </div>
+        <div class="collapsible" id="diagnosis">
+            <h3>What is depression?</h3>
+            <p>Depression is not just feeling sad--it can make you feel hopeless, unmotivated, or worthless, or gain or lose weight rapidly. Depression is linked to
+                insomnia or excessive sleeping, lack of energy, trouble concentrating, and suicidal thoughts or a desire to self-harm. It's one of the most common mental disorders,
+                 and affects many people our age, but it is treatable.<br><br>
+                Many people with depression find a balance of therapy and antidepressant medication, although everyone's different and some things don't work for everyone in the same way.
+                What's important is to keep trying.<br><br>While it's hard to self-diagnose, since everyone expresses symptoms differently and you might not show all of the symptoms,
+                having a baseline can be helpful. If you're worried you've got depression, you can progress through <span id = "dia" class = "show">this simple test
+            </span> to find out how urgent it is that you get help.<br><br>Please realize that we are not professionals! We got all of this information from the resources we listed for you and our personal experiences,
+                and while we made sure it's accurate, you are the best judge of yourself! If you're worried about your mental health or feel like you're in a dangerous place, you should consider seeking out someone who is qualified to help you.
+                Depression is a disease like any other, and a qualified professional is the best place to go to get help for it. Start with the resources above and make sure to do your own research!
+            </p>
+
+        </div>
+
+        <div class = "collapsible" id = "suggestions">
+            <h3>Fill your cup!</h3>
+            <p id = "suggested">Mouse over me to get a suggestion for something to do!</p>
+            <p>If you don't like this suggestion, try, try again! Always remember that we don't always know what's best for you--only you can. And please,
+            please remember that feeling this way ISN'T your fault. The fact that you're sick is not a moral failing, and
+            you are stronger than this! We believe in you! Please, please, always remember that you are loved and you are worthy of being happy!</p>
+        </div>
+
+        <div class = "collapsible" id = "slidecontainer">
+            <h3>Litmus test</h3>
+            <p id = "special">Use the sliders to tell us how true these statements feel.</p>
+
+            <span id = "span1">
+                <label for = "slide1">I have been feeling down, irritable, annoyed, hopeless, or sad more often than not over the last few weeks.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide1" value = "0">
+            </span>
+
+            <span id = "span2">
+                <label for = "slide2">I don't have as much enthusiasm, and it's hard to get excited even about things I used to enjoy doing.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide2" value = "0">
+            </span>
+
+            <span id = "span3">
+                <label for= "slide3">I've been having trouble falling asleep, staying asleep, or sleeping too much recently.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide3" value = "0">
+            </span>
+
+            <span id = "span4">
+                <label for= "slide4">I've had a poor appetite and been losing or gaining a lot of weight, eating an unhealthy amount, or skipping meals.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide4" value = "0">
+            </span>
+
+            <span id = "span5">
+                <label for= "slide5">I've been tired and have less energy than I used to.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide5" value = "0">
+            </span>
+
+            <span id = "span6">
+                <label for= "slide6">I've been feeling bad about myself. I think I've let myself or my friends and family down, and I feel like a failure or a waste.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide6" value = "0">
+            </span>
+
+            <span id = "span7">
+                <label for= "slide7">I can't concentrate on homework, or even on things I like to do that are low-effort, like watching TV.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide7" value = "0">
+            </span>
+
+            <span id = "span8">
+                <label for= "slide8">I've been moving, thinking, or speaking slowly--or I've been so fidgety and restless that I can't sit still.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide8" value = "0">
+            </span>
+
+            <span id = "span9">
+                <label for= "slide9">I think I would be better off dead. I've been thinking a lot about suicide or hurting myself.</label>
+                <input type = "range" min = "1" max = "10" class = "slider" id = "slide9" value = "0">
+            </span>
+
+        </div>
+    </div>
+
+    <img src = "images/cupgif.gif" id = "cupGif" alt = "This gif is half-full.">
+</body>
+</html>

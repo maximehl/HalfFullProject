@@ -1,0 +1,95 @@
+.collapsible{
+    max-width: 100%;
+    min-width: 180px;
+    min-height: 20px;
+    overflow: hidden;
+    background-color: lightblue;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin:12px;
+    transition: 1s;
+}
+
+li {
+    max-width: 90%;
+    min-width: 120px;
+    padding: 5px;
+    width: auto;
+    text-align: left;
+    overflow: visible;
+}
+
+#dia {
+    font-weight: bold;
+    display: inline;
+}
+
+#slidecontainer {
+    opacity: 0;
+    min-height: 20px;
+    transition: .5s;
+}
+
+#special{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+label{
+    display: block;
+}
+
+#span1 {
+    display: inline;
+}
+span {
+    display: none;
+}
+
+input {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#suggestions {
+    transition: .5s;
+}
+
+p{
+    margin:20px 0 0 0;
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    margin: 10px auto;
+}
+
+#sideBar{
+    width:30%;
+    float: left;
+    text-align: center;
+}
+
+body{
+    font-family: sans-serif;
+    min-width: 10%;
+}
+
+
+#cupGif {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+    max-width : 80%;
+    max-height : 80%;
+    min-width: 380px;
+    min-height: 380px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    z-index : -1;
+}
