@@ -6,13 +6,7 @@ $(document).ready(function(){
         addCollapsibleTriggers($(this));
     });
     
-    $(span).on("click", function) {
-        CURRENT_SLIDE = $(this).id;
-    }
     
-    $(button).on("click", function) {
-        toNextItem(CURRENT_SLIDE);
-    }
 
     $(window).resize(function() {
         $(".collapsible").each(function() {
@@ -49,8 +43,12 @@ $(document).ready(function(){
             event.stopPropagation();
         });
         $(this).on("mouseup", function() {
-            toNextItem($(this));
+            CURRENT_SLIDE = $(this).id;
         });
+    });
+    
+    $(button).on("click", function() {
+        toNextItem(CURRENT_SLIDE);
     });
 
     $("#dia").on("click", function() {
