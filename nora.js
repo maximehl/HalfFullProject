@@ -1,9 +1,18 @@
 var SLIDE_VALS = [];
+var CURRENT_SLIDE;
 
 $(document).ready(function(){
     $(".collapsible").each(function(){
         addCollapsibleTriggers($(this));
     });
+    
+    $(span).on("click", function) {
+        CURRENT_SLIDE = $(this).id;
+    }
+    
+    $(button).on("click", function) {
+        toNextItem(CURRENT_SLIDE);
+    }
 
     $(window).resize(function() {
         $(".collapsible").each(function() {
