@@ -43,7 +43,7 @@ $(document).ready(function(){
             event.stopPropagation();
         });
         $(this).on("mouseup", function() {
-            CURRENT_SLIDE = $(this).id;
+            CURRENT_SLIDE = $(this);
         });
     });
     
