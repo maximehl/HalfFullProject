@@ -43,15 +43,13 @@ $(document).ready(function(){
     });
 
     $("input").each(function(){
-        $(this).on("click", function(){
+        $(this).on("mouseover", function(){
             event.stopPropagation();
-        });
-        $(this).on("mouseup", function() {
             CURRENT_SLIDE = $(this);
         });
     });
     
-    $("button").on("click", function() {
+    $("#continue").on("click", function() {
         event.stopPropagation();
         toNextItem(CURRENT_SLIDE);
     });

@@ -24,6 +24,18 @@ body {
     font-size: 12px;
 }
 
+#credit {
+    height: 20px;
+    width: 60px;
+    overflow: hidden;
+    background-color: lightblue;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin:12px;
+    float: right;
+    top: 0;
+}
+
 #cupGif {
     position: absolute;
     right: 0;
