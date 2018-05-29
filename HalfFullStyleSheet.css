@@ -1,3 +1,13 @@
+body {
+    background-color: #FEFFFC;
+    font-family: sans-serif;
+    min-width: 10%;
+}
+
+#buffer {
+    margin-top: 20px;
+}
+
 .collapsible{
     max-width: 100%;
     min-width: 180px;
@@ -12,74 +22,7 @@
 
 #continue {
     border-radius: 50%;
-}
-
-li {
-    max-width: 90%;
-    min-width: 120px;
-    padding: 5px;
-    width: auto;
-    text-align: left;
-    overflow: visible;
-}
-
-#dia {
-    font-weight: bold;
-    display: inline;
-}
-
-#slidecontainer {
-    opacity: 0;
-    min-height: 20px;
-    transition: .5s;
-}
-
-#special{
-    text-align: center;
-    padding-top: 10px;
-    margin-bottom: 20px;
-}
-
-label{
-    display: block;
-}
-
-#span1 {
-    display: inline;
-}
-span {
-    display: none;
-}
-
-input {
-    display: block;
-    text-align: center;
-    margin: auto;
-}
-
-#suggestions {
-    transition: .5s;
-}
-
-p{
-    margin:20px 0 0 0;
-    text-align: center;
-}
-
-h3{
-    text-align: center;
-    margin: 10px auto;
-}
-
-#sideBar{
-    width:30%;
-    float: left;
-    text-align: center;
-}
-
-body{
-    font-family: sans-serif;
-    min-width: 10%;
+    background-color: inherit;
 }
 
 #cupGif {
@@ -97,25 +40,40 @@ body{
     z-index : -1;
 }
 
+#dia {
+    font-weight: bold;
+    display: inline;
+}
+
+h3{
+    text-align: center;
+    margin: 10px auto;
+}
+
+input {
+    display: block;
+    margin: auto;
+}
 
 input[type=range].slider {
     -webkit-appearance: none;
     width: 100%;
     margin: 7.55px 0;
 }
+
 input[type=range].slider:focus {
     outline: none;
 }
+
 input[type=range].slider::-webkit-slider-runnable-track {
     width: 100%;
     height: 8.9px;
     cursor: pointer;
-    box-shadow: 2.3px 2.3px 14px #060c18, 0 0 2.3px #0b162c;
     background: rgba(147, 193, 214, 0.5);
     border-radius: 25px;
 }
+
 input[type=range].slider::-webkit-slider-thumb {
-    box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0 0 0.8px rgba(0, 0, 88, 0.67);
     border: 1.9px solid rgba(0, 30, 0, 0.57);
     height: 24px;
     width: 18px;
@@ -125,19 +83,16 @@ input[type=range].slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     margin-top: -7.55px;
 }
-input[type=range].slider:focus::-webkit-slider-runnable-track {
-    background: rgba(165, 204, 221, 0.5);
-}
+
 input[type=range].slider::-moz-range-track {
     width: 100%;
     height: 8.9px;
     cursor: pointer;
-    box-shadow: 2.3px 2.3px 14px #060c18, 0 0 2.3px #0b162c;
     background: rgba(147, 193, 214, 0.5);
     border-radius: 25px;
 }
+
 input[type=range].slider::-moz-range-thumb {
-    box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0 0 0.8px rgba(0, 0, 88, 0.67);
     border: 1.9px solid rgba(0, 30, 0, 0.57);
     height: 24px;
     width: 18px;
@@ -145,6 +100,7 @@ input[type=range].slider::-moz-range-thumb {
     background: rgba(30, 88, 197, 0.71);
     cursor: pointer;
 }
+
 input[type=range].slider::-ms-track {
     width: 100%;
     height: 8.9px;
@@ -153,18 +109,18 @@ input[type=range].slider::-ms-track {
     border-color: transparent;
     color: transparent;
 }
+
 input[type=range].slider::-ms-fill-lower {
     background: rgba(129, 182, 207, 0.5);
     border-radius: 50px;
-    box-shadow: 2.3px 2.3px 14px #060c18, 0 0 2.3px #0b162c;
 }
+
 input[type=range].slider::-ms-fill-upper {
     background: rgba(147, 193, 214, 0.5);
     border-radius: 50px;
-    box-shadow: 2.3px 2.3px 14px #060c18, 0 0 2.3px #0b162c;
 }
+
 input[type=range].slider::-ms-thumb {
-    box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0 0 0.8px rgba(0, 0, 88, 0.67);
     border: 1.9px solid rgba(0, 30, 0, 0.57);
     width: 18px;
     border-radius: 48px;
@@ -172,9 +128,60 @@ input[type=range].slider::-ms-thumb {
     cursor: pointer;
     height: 8.9px;
 }
+
 input[type=range].slider:focus::-ms-fill-lower {
     background: rgba(147, 193, 214, 0.5);
 }
+
 input[type=range].slider:focus::-ms-fill-upper {
     background: rgba(165, 204, 221, 0.5);
+}
+
+label{
+    display: block;
+}
+
+li {
+    max-width: 90%;
+    min-width: 120px;
+    padding: 5px;
+    width: auto;
+    text-align: left;
+    overflow: visible;
+}
+
+p{
+    margin:20px 0 0 0;
+    text-align: center;
+}
+
+#slidecontainer {
+    opacity: 0;
+    min-height: 20px;
+    transition: .5s;
+}
+
+#span1 {
+    display: inline;
+}
+
+span {
+    display: none;
+    text-align: center;
+}
+
+#special{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+#sideBar{
+    width:30%;
+    float: left;
+    text-align: center;
+}
+
+#suggestions {
+    transition: .5s;
 }
