@@ -4,6 +4,7 @@ var CURRENT_SLIDE;
 $(document).ready(function(){
     $(".collapsible").each(function(){
         addCollapsibleTriggers($(this));
+        $(this).attr("title", "Click me!");
     });
 
     $(window).resize(function() {
@@ -73,6 +74,7 @@ $(document).ready(function(){
 });
 
 function resize(inp) {
+    //resizes the resizable divs
     inp.click();
     inp.click();
 }
@@ -149,8 +151,6 @@ function diagnoseTest(array) {
         total += array[i] * percentWeights[i]
     }
 
-    console.log(total);
-
     if (total >= 80) {
         $("#special").html("Even if you aren't diagnosed with depression, you should talk to someone about how you've been feeling. This isn't a healthy mindspace, and if you get help, you can get out of it." +
             " Take a look through the hotlines and warmlines available at the top left, and try having a talk with someone you trust or" +
@@ -168,6 +168,7 @@ function diagnoseTest(array) {
             "it might help more than you think, and they'll be better able to support you if they know what you need. You are loved--you are worth it--no matter what.");
         //friends and family
     }
+    $("#continue").css({"display":"none"});
     //resizes div to fit the result
     resize($("#slidecontainer"));
 }
