@@ -15,7 +15,8 @@ $(document).ready(function(){
         })
     });
 
-    $("#suggested").on("mouseleave", function(){
+    $("#suggested").on("click", function(){
+        event.stopPropagation();
         //long, long list of suggestions
         var list = ["Call or text a friend or family member.", "Deep Dive: lower your face into a bowl of water to help calm you down in a crisis.",
             "Go out into nature! Find a park nearby or go for a walk around your neighborhood.",
@@ -43,10 +44,13 @@ $(document).ready(function(){
     });
 
     $("input").each(function(){
-        $(this).on("mouseover", function(){
+        $(this).on("click", function() {
             event.stopPropagation();
-            CURRENT_SLIDE = $(this);
         });
+        $(this).on("mousedown", function() {
+            CURRENT_SLIDE = $(this);
+        })
+
     });
     
     $("#continue").on("click", function() {
@@ -145,11 +149,10 @@ function diagnoseTest(array) {
 
     //add each array value multiplied by its weight to the total (should be 160 if all full (because of the suicide thing))
     for (var i = 0; i < 9; i++) {
-        console.log(total);
         total += array[i] * percentWeights[i]
     }
 
-    if (total >= 80) {
+    if (total >= 70) {
         $("#special").html("Even if you aren't diagnosed with depression, you should talk to someone about how you've been feeling. This isn't a healthy mindspace, and if you get help, you can get out of it." +
             " Take a look through the hotlines and warmlines available at the top left, and try having a talk with someone you trust or" +
             " a trained professional about how you feel. Please remember that we care for you! You are important and worth far more than you might think.");
@@ -167,6 +170,7 @@ function diagnoseTest(array) {
         //friends and family
     }
     $("#continue").css({"display":"none"});
+    $(".t-f").css({"display":"none"});
     //resizes div to fit the result
     resize($("#slidecontainer"));
 }

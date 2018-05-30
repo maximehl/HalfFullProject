@@ -14,6 +14,7 @@ body {
     padding: 10px 20px;
     margin:12px;
     transition: 1s;
+    cursor: pointer;
 }
 
 #continue {
@@ -25,15 +26,18 @@ body {
 }
 
 #credit {
-    height: 20px;
-    width: 60px;
+    position: fixed;
+    height: 17px;
+    width: 170px;
     overflow: hidden;
     background-color: lightblue;
-    border-radius: 20px;
-    padding: 10px 20px;
+    border-radius: 10px;
+    padding: 10px;
     margin:12px;
-    float: right;
-    top: 0;
+    text-align: center;
+    font-size: 10px;
+    right: 0;
+    bottom: 0;
 }
 
 #cupGif {
@@ -54,6 +58,10 @@ body {
 #dia {
     font-weight: bold;
     display: inline;
+    cursor: pointer;
+}
+#dia:hover {
+    text-decoration: underline;
 }
 
 h3{
@@ -188,11 +196,32 @@ span {
 }
 
 #sideBar{
-    width:30%;
+    width:40%;
     float: left;
     text-align: center;
 }
 
 #suggestions {
     transition: .5s;
+}
+
+.t-f {
+    display : block;
+    font-size: 15px;
+    margin-top: 20%;
+}
+.t-f.top {
+    margin-top: -20px;
+}
+
+.t-f.left {
+    float: left;
+}
+
+.t-f.middle {
+    left: 50%;
+}
+
+.t-f.right {
+    float: right;
 }
