@@ -12,9 +12,9 @@
         <div class="collapsible" id="resources">
             <h3>Want to talk?</h3>
             <p></p>
-            <p>We've gathered some hotlines and 'warmlines' for you. Some of these resources will help you find a therapist,
-                some will help you out of a crisis, and we've labeled all of the ones we know are free and confidential.
-                Stay strong, and take care of yourself--you're going to be just fine!</p>
+            <p>We've gathered some hotlines and 'warmlines' for you. Some of these resources can help you find a therapist,
+                some can help you out of a rut or spiral, and we've labeled all of the ones we know are free and confidential.
+            </p>
             <ul>
                 <li>National Suicide Prevention Lifeline: 1-800-273-TALK (1-800-273-8255) (Free and confidential, 24/7)</li>
                 <li>Chat with the NSPL online over text at <a href = "http://www.suicidepreventionlifeline.org">their website</a> (Free and confidential, 24/7)</li>
@@ -34,6 +34,7 @@
                 <li>Warmlines: If you need some general support, try calling one of <a href = "http://warmline.org/#california">these phone lines</a></li>
             </ul>
         </div>
+
         <div class="collapsible" id="diagnosis">
             <h3>Am I depressed?</h3>
             <p>Depression is not just feeling sad--it can make you feel hopeless, unmotivated, or worthless, or gain or lose weight rapidly. Depression is linked to
@@ -59,16 +60,10 @@
         </div>
 
         <div class = "collapsible" id = "slidecontainer">
-            <h3>Quick diagnosis</h3>
-            <p id = "special">Use these sliders to tell us how true these statements feel.</p>
-
-            <span class = "t-f left top">|</span>
-            <span class = "t-f right top">|</span>
-            <span class = "t-f middle top">|</span>
-
-            <span class = "t-f left">False</span>
-            <span class = "t-f right">True</span>
-            <span class = "t-f middle">About half the time</span>
+            <h3>Check in</h3>
+            <p id = "special">Use these sliders to tell us how true these statements feel, and we'll give you our best
+                estimate and advice for how to get better. We're not professionals--we're just using data from the New Zealand health department
+                and personal experience. This is just our perspective, and you know what's best for you.</p>
 
             <span id = "span1">
                 <label for = "slide1">I have been feeling down, irritable, annoyed, hopeless, or sad more often than not over the last few weeks.</label>
@@ -76,7 +71,7 @@
             </span>
 
             <span id = "span2">
-                <label for = "slide2">I don't have as much enthusiasm, and it's hard to get excited even about things I used to enjoy doing.</label>
+                <label for = "slide2">I don't have as much enthusiasm, and it's hard to get excited even about things I used to enjoy doing. I just don't see the point.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide2" value = "0">
             </span>
 
@@ -91,7 +86,7 @@
             </span>
 
             <span id = "span5">
-                <label for= "slide5">I've been tired and have less energy than I used to.</label>
+                <label for= "slide5">I've been tired even when I just woke up and have less energy overall than I used to.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide5" value = "0">
             </span>
 
@@ -101,7 +96,7 @@
             </span>
 
             <span id = "span7">
-                <label for= "slide7">I can't concentrate on homework, or even on things I like to do that are low-effort, like watching TV.</label>
+                <label for= "slide7">I can't concentrate on school, or even on things I like to do that are low-effort, like watching TV.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide7" value = "0">
             </span>
 
@@ -111,11 +106,21 @@
             </span>
 
             <span id = "span9">
-                <label for= "slide9">I think I would be better off dead. I've been thinking a lot about suicide or hurting myself.</label>
+                <label for= "slide9">I think I would be better off dead. I've been thinking about suicide or hurting myself.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide9" value = "0">
             </span>
 
-            <button id = "continue">Continue?</button>
+
+            <span class = "t-f middle top">|</span>
+            <span class = "t-f left top">|</span>
+            <span class = "t-f right top">|</span>
+
+
+            <span class = "t-f left">False</span>
+            <span class = "t-f right">True</span>
+            <span class = "t-f middle">About half the time<button id = "continue">Continue?</button></span>
+
+
 
         </div>
     </div>

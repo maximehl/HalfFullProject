@@ -4,7 +4,6 @@ var CURRENT_SLIDE;
 $(document).ready(function(){
     $(".collapsible").each(function(){
         addCollapsibleTriggers($(this));
-        $(this).attr("title", "Click me!");
     });
 
     $(window).resize(function() {
@@ -40,14 +39,14 @@ $(document).ready(function(){
         ];
         //feeds a random suggestion from the list into the div
         $(this).html(list[Math.floor(Math.random() * list.length)]);
-        resize($(this));
+        resize($(this).parent());
     });
 
     $("input").each(function(){
         $(this).on("click", function() {
             event.stopPropagation();
         });
-        $(this).on("mousedown", function() {
+        $(this).on("mouseenter", function() {
             CURRENT_SLIDE = $(this);
         })
 
@@ -60,17 +59,8 @@ $(document).ready(function(){
 
     $("#dia").on("click", function() {
         var slides = $("#slidecontainer");
-
-        if($(this).hasClass("show")) {
-            slides.css({"opacity": "100"});
-
-            $(this).removeClass("show");
-            slides.click();
-            $("#diagnosis").click();
-        } else {
-            slides.css({"opacity": "0"});
-            $(this).addClass("show");
-        }
+        $("#diagnosis").click();
+        slides.click();
     });
 
 });
@@ -138,7 +128,7 @@ function getHeightNeeded(toggleObj){
 
 function diagnoseTest(array) {
     //assigns a weight to each of them--being suicidal is more worrying than insomnia
-    var percentWeights = [.07, .08, .08, .13, .08, .15, .14, .07, .2];
+    var percentWeights = [.08, .08, .08, .12, .08, .15, .13, .08, .2];
     var total = 0;
 
     //if the value of the 'suicidal' or 'worthless' bar is too high, emergency mode
@@ -159,8 +149,8 @@ function diagnoseTest(array) {
         //get help
     } else if (total >= 40) {
         $("#special").html("Even if you aren't diagnosed with depression, it looks like you need to get yourself out of the mental space you're in right now." +
-            " Try 'filling your cup' with things you enjoy doing, spending time with people you like, and positive thinking--If you want a suggestion, click" +
-            " on 'Fill your cup', and we'll think of something for you!");
+            " Try 'filling your cup' with things you enjoy doing, spending time with people you like, and (as cliche as it sounds)" +
+            "positive thinking--If you want a suggestion, click on 'Fill your cup', and we'll think of something for you!");
         //coping methods
     } else {
         $("#special").html("Even if you aren't diagnosed with depression, you should remind yourself of how important you are and the effect you have on the world." +
