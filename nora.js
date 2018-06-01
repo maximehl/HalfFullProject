@@ -2,6 +2,7 @@ var SLIDE_VALS = [];
 var CURRENT_SLIDE;
 
 $(document).ready(function(){
+    CURRENT_SLIDE = $("#slide1");
     $(".collapsible").each(function(){
         addCollapsibleTriggers($(this));
     });
@@ -46,10 +47,6 @@ $(document).ready(function(){
         $(this).on("click", function() {
             event.stopPropagation();
         });
-        $(this).on("mouseenter", function() {
-            CURRENT_SLIDE = $(this);
-        })
-
     });
     
     $("#continue").on("click", function() {
@@ -58,9 +55,8 @@ $(document).ready(function(){
     });
 
     $("#dia").on("click", function() {
-        var slides = $("#slidecontainer");
-        $("#diagnosis").click();
-        slides.click();
+        event.stopPropagation();
+        $("#slidecontainer").click();
     });
 
 });
@@ -87,6 +83,8 @@ function toNextItem(inp) {
 
     //increments current number
     currentNum +=1;
+
+    CURRENT_SLIDE = $("#slide"+currentNum);
 
     //if this was the last slider,
     if(currentNum === 10) {
@@ -128,7 +126,7 @@ function getHeightNeeded(toggleObj){
 
 function diagnoseTest(array) {
     //assigns a weight to each of them--being suicidal is more worrying than insomnia
-    var percentWeights = [.08, .08, .08, .12, .08, .15, .13, .08, .2];
+    var percentWeights = [.08, .09, .08, .11, .08, .15, .13, .08, .2];
     var total = 0;
 
     //if the value of the 'suicidal' or 'worthless' bar is too high, emergency mode
@@ -143,20 +141,24 @@ function diagnoseTest(array) {
     }
 
     if (total >= 70) {
-        $("#special").html("Even if you aren't diagnosed with depression, you should talk to someone about how you've been feeling. This isn't a healthy mindspace, and if you get help, you can get out of it." +
-            " Take a look through the hotlines and warmlines available at the top left, and try having a talk with someone you trust or" +
-            " a trained professional about how you feel. Please remember that we care for you! You are important and worth far more than you might think.");
+        $("#special").html("Even if you aren't diagnosed with depression, you should talk to someone about how you've" +
+            " been feeling. This isn't a healthy space, and if you get help, you can get out of it. Take a look through" +
+            " the hotlines and warmlines available at the top of this column, and try having a talk with someone you trust" +
+            " or a trained professional about how you feel. Please remember that we care for you! You are important and" +
+            " worth far more than you might think.");
         //get help
     } else if (total >= 40) {
-        $("#special").html("Even if you aren't diagnosed with depression, it looks like you need to get yourself out of the mental space you're in right now." +
-            " Try 'filling your cup' with things you enjoy doing, spending time with people you like, and (as cliche as it sounds)" +
-            "positive thinking--If you want a suggestion, click on 'Fill your cup', and we'll think of something for you!");
+        $("#special").html("Even if you aren't diagnosed with depression, it looks like you need to get yourself out of" +
+            " the mental space you're in right now. Try 'filling your cup' with things you enjoy doing, spending time" +
+            " with people you like, and (as cliche as it sounds) positive thinking--If you want a suggestion, click on" +
+            " 'Fill your cup', and we'll think of something for you! You won't feel like this forever. We believe in you!");
         //coping methods
     } else {
-        $("#special").html("Even if you aren't diagnosed with depression, you should remind yourself of how important you are and the effect you have on the world." +
-            " Always remember that there are people who love you--try reaching out to some of them. Even if " +
-            "you don't think they'll care, give your friends a call or text, or go talk to your parents about how you've been feeling--" +
-            "it might help more than you think, and they'll be better able to support you if they know what you need. You are loved--you are worth it--no matter what.");
+        $("#special").html("Even if you aren't diagnosed with depression, you should remind yourself of how important you are." +
+            " Always remember that there are people who love you--try reaching out to some of them. Even if" +
+            " you don't think they'll care, give your friends a call or text, or go talk to your parents about how you've" +
+            " been feeling--it might help more than you think, and they'll be better able to support you if they know" +
+            " what you need. You are loved--you are worth it--no matter what.");
         //friends and family
     }
     $("#continue").css({"display":"none"});
