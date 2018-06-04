@@ -7,12 +7,23 @@ $(document).ready(function(){
         addCollapsibleTriggers($(this));
     });
 
+    var resizeTime;
+
     $(window).resize(function() {
+        clearTimeout(resizeTime);
+        resizeTime = setTimeout(resizingWindow, 1000);
+    });
+
+    function resizingWindow() {
         $(".collapsible").each(function() {
             if($(this).hasClass("shown")) {
                 resize($(this));
             }
-        })
+        });
+    }
+
+    $(a).on("click", function() {
+        event.stopPropagation();
     });
 
     $("#suggested").on("click", function(){
@@ -28,8 +39,8 @@ $(document).ready(function(){
             "Go out for a run or do something fun and physical with a friend or family member.",
             "Think carefully and slowly through the things overwhelming you. Break them down until they seem manageable--it might take some time but it's worth it!",
             "Try looking for a therapist in your area with some of the resources above. Talking through your thoughts and feelings with someone trained to listen might help!",
-            "Go and sit in the sun! Feel the wind on your face, lie in the grass. ", "Remember, we are all parts of a grand, beautiful network of life!",
-            "Try adopting a new hobby or skill.", "Try something you haven't done in a while.", "Vent! Let out your feelings." +
+            "Go and sit in the sun! Feel the wind on your face, lie in the grass. ", "Try adopting a new hobby or skill.",
+            "Do something you haven't done in a while.", "Vent! Let out your feelings." +
             " Write them down, scream into your pillow, talk to your parents, tell your friends, tell your dog, sing them out, tell a therapist, tell a stranger...",
             "Eat something healthy! Physical health and mental health are closely related!", "Get clean--take a shower, or pamper yourself with a bath bomb.",
             "Paint your nails, dress up nicely... even if you don't go anywhere, looking nice feels nice!",
@@ -55,9 +66,10 @@ $(document).ready(function(){
     });
 
     $("#dia").on("click", function() {
-        event.stopPropagation();
-        $("#slidecontainer").click();
+        $("#slidecontainer").delay(1000).click();
     });
+
+
 
 });
 
