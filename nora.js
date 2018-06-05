@@ -159,20 +159,22 @@ function diagnoseTest(array) {
             " or a trained professional about how you feel. Please remember that we care for you! You are important and" +
             " worth far more than you might think.");
         //get help
-    } else if (total >= 40) {
+    } else if (total >= 50) {
         $("#special").html("Even if you aren't diagnosed with depression, it looks like you need to get yourself out of" +
             " the mental space you're in right now. Try 'filling your cup' with things you enjoy doing, spending time" +
             " with people you like, and (as cliche as it sounds) positive thinking--If you want a suggestion, click on" +
             " 'Fill your cup', and we'll think of something for you! You won't feel like this forever. We believe in you!");
         //coping methods
-    } else {
+    } else if (total >= 20){
         $("#special").html("Even if you aren't diagnosed with depression, you should remind yourself of how important you are." +
             " Always remember that there are people who love you--try reaching out to some of them. Even if" +
             " you don't think they'll care, give your friends a call or text, or go talk to your parents about how you've" +
             " been feeling--it might help more than you think, and they'll be better able to support you if they know" +
             " what you need. You are loved--you are worth it--no matter what.");
         //friends and family
-    }
+    } else {
+        $("#special").html("You are probably not sick!! We aren't experts, but we think you are probably fine! If you still think you"+
+                       " have depression, you should talk to others about it, who are probably more equipped to help you, but we think you're fine!");
     $("#continue").css({"display":"none"});
     $(".t-f").css({"display":"none"});
     //resizes div to fit the result
