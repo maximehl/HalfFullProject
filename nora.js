@@ -46,7 +46,7 @@ $(document).ready(function(){
             "Paint your nails, dress up nicely... even if you don't go anywhere, looking nice feels nice!",
             "Make yourself some of your favorite food or drink, or go and get it--bring a friend, if you want!",
             "Come out of your room. Even if you don't talk to your family outright about what you're feeling, being with others often helps."+
-            " Alone time is good, but company is too!", "Stick your head out the window and listen to the world around you.",
+            " Alone time is good, but company is too.", "Stick your head out the window and listen to the world around you.",
             "Slow down and take a deep breath. Where you are is okay--you're okay."
         ];
         //feeds a random suggestion from the list into the div
