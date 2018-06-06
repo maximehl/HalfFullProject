@@ -177,4 +177,4 @@ function diagnoseTest(array) {
         $(".t-f").css({"display": "none"});
         //resizes div to fit the result
         resize($("#slidecontainer"));
-}//work pls
+}
