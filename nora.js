@@ -22,9 +22,6 @@ $(document).ready(function(){
         });
     }
 
-    $(a).on("click", function() {
-        event.stopPropagation();
-    });
 
     $("#suggested").on("click", function(){
         event.stopPropagation();
@@ -47,7 +44,8 @@ $(document).ready(function(){
             "Make yourself some of your favorite food or drink, or go and get it--bring a friend, if you want!",
             "Come out of your room. Even if you don't talk to your family outright about what you're feeling, being with others often helps."+
             " Alone time is good, but company is too.", "Stick your head out the window and listen to the world around you.",
-            "Slow down and take a deep breath. Where you are is okay--you're okay."
+            "Slow down and take a deep breath. Where you are is okay--you're okay.", "Turn on some calming music or ambient noise--"+
+            "it'll give you something else to focus on and might help you calm down. <a href = 'calm-youtube-playlist.html'>Here</a> are some of Nora's favorites."
         ];
         //feeds a random suggestion from the list into the div
         $(this).html(list[Math.floor(Math.random() * list.length)]);
@@ -64,12 +62,6 @@ $(document).ready(function(){
         event.stopPropagation();
         toNextItem(CURRENT_SLIDE);
     });
-
-    $("#dia").on("click", function() {
-        $("#slidecontainer").delay(1000).click();
-    });
-
-
 
 });
 
@@ -165,7 +157,7 @@ function diagnoseTest(array) {
             " with people you like, and (as cliche as it sounds) positive thinking--If you want a suggestion, click on" +
             " 'Fill your cup', and we'll think of something for you! You won't feel like this forever. We believe in you!");
         //coping methods
-    } else if (total >= 20){
+    } else if (total >= 20) {
         $("#special").html("Even if you aren't diagnosed with depression, you should remind yourself of how important you are." +
             " Always remember that there are people who love you--try reaching out to some of them. Even if" +
             " you don't think they'll care, give your friends a call or text, or go talk to your parents about how you've" +
@@ -173,10 +165,16 @@ function diagnoseTest(array) {
             " what you need. You are loved--you are worth it--no matter what.");
         //friends and family
     } else {
-        $("#special").html("You are probably not sick!! We aren't experts, but we think you are probably fine! If you still think you"+
-                       " have depression, you should talk to others about it, who are probably more equipped to help you, but we think you're fine!");
-    $("#continue").css({"display":"none"});
-    $(".t-f").css({"display":"none"});
-    //resizes div to fit the result
-    resize($("#slidecontainer"));
+        $("#special").html("We aren't experts, but we think you are probably healthy. Of course, we are just some strangers" +
+            " on the Internet, so if you're really worried you have depression, you should definitely talk to others" +
+            " who are probably better equipped to help you, but we in all our high school expertise think you're fine. If" +
+            " you want to try some of the coping methods or distractions to 'fill your cup', click on that section, and if" +
+            " you think we were wrong, you should tell your family and friends how you've been feeling, but if you think," +
+            " this makes sense, take a deep breath and relax! Whatever made you come here, you can beat it--nothing can stop you.");
+        //probably fine
+    }
+        $("#continue").css({"display": "none"});
+        $(".t-f").css({"display": "none"});
+        //resizes div to fit the result
+        resize($("#slidecontainer"));
 }

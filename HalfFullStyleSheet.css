@@ -32,15 +32,15 @@ body {
 
 #credit {
     position: fixed;
-    height: 17px;
-    width: 170px;
+    height: 20px;
+    width: 200px;
     overflow: hidden;
     background-color: lightblue;
     border-radius: 10px;
     padding: 10px;
-    margin:12px;
+    margin: 12px;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     right: 0;
     bottom: 0;
 }
@@ -78,7 +78,7 @@ input {
 input[type=range].slider {
     -webkit-appearance: none;
     width: 100%;
-    margin: 7.55px 0;
+    margin: 7px 0;
 }
 
 input[type=range].slider:focus {
@@ -87,33 +87,33 @@ input[type=range].slider:focus {
 
 input[type=range].slider::-webkit-slider-runnable-track {
     width: 100%;
-    height: 8.9px;
+    height: 9px;
     cursor: pointer;
     background: rgba(147, 193, 214, 0.3);
     border-radius: 25px;
 }
 
 input[type=range].slider::-webkit-slider-thumb {
-    border: 1.9px solid rgba(0, 30, 0, 0.57);
+    border: 2px solid rgba(0, 30, 0, 0.57);
     height: 24px;
     width: 18px;
     border-radius: 48px;
     background: rgba(30, 88, 197, 0.71);
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -7.55px;
+    margin-top: -7px;
 }
 
 input[type=range].slider::-moz-range-track {
     width: 100%;
-    height: 8.9px;
+    height: 9px;
     cursor: pointer;
     background: rgba(147, 193, 214, 0.3);
     border-radius: 25px;
 }
 
 input[type=range].slider::-moz-range-thumb {
-    border: 1.9px solid rgba(0, 30, 0, 0.57);
+    border: 2px solid rgba(0, 30, 0, 0.57);
     height: 24px;
     width: 18px;
     border-radius: 48px;
@@ -123,7 +123,7 @@ input[type=range].slider::-moz-range-thumb {
 
 input[type=range].slider::-ms-track {
     width: 100%;
-    height: 8.9px;
+    height: 9px;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
@@ -141,12 +141,12 @@ input[type=range].slider::-ms-fill-upper {
 }
 
 input[type=range].slider::-ms-thumb {
-    border: 1.9px solid rgba(0, 30, 0, 0.57);
+    border: 2px solid rgba(0, 30, 0, 0.57);
     width: 18px;
     border-radius: 48px;
     background: rgba(30, 88, 197, 0.71);
     cursor: pointer;
-    height: 8.9px;
+    height: 9px;
 }
 
 input[type=range].slider:focus::-ms-fill-lower {
