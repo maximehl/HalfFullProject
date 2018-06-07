@@ -101,52 +101,77 @@
         <div class = "collapsible" id = "slidecontainer">
             <h3>Check in</h3>
             <p id = "special">Use these sliders to tell us how true these statements feel, and we'll give you our best
-                estimate and advice for how to get better. We're not professionals--we're just using data from the New Zealand health department
-                and personal experience. This is just our perspective, and you know what's best for you.</p>
+                estimate and advice for how to get better. We're not professionals--we're just using information from the
+                New Zealand health department and personal experience. This is just our perspective, and you know what's
+                best for you.<br><br>
+                When you answer these questions, think about the last few weeks and move the slider accordingly. We're
+                going to ask you some heavy questions, including about suicide and self-harm, but this information won't go anywhere.
+                We will never save your information, and the only way someone will be able to see it is if you show them.
+            </p>
+
+            <span id = "span0">
+                <label for = "slide0">I have been feeling down, irritable, annoyed, hopeless, or sad.</label>
+                <input type = "range" min = "1" max = "100" class = "slider" id = "slide0" value = "0">
+            </span>
 
             <span id = "span1">
-                <label for = "slide1">I have been feeling down, irritable, annoyed, hopeless, or sad more often than not over the last few weeks.</label>
+                <label for = "slide1">I don't have as much enthusiasm, and it's hard to get excited even about things I used to enjoy doing. I just don't see the point.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide1" value = "0">
             </span>
 
             <span id = "span2">
-                <label for = "slide2">I don't have as much enthusiasm, and it's hard to get excited even about things I used to enjoy doing. I just don't see the point.</label>
+                <label for= "slide2">I've been having trouble falling asleep or staying asleep recently.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide2" value = "0">
             </span>
 
             <span id = "span3">
-                <label for= "slide3">I've been having trouble falling asleep, staying asleep, or sleeping too much recently.</label>
+                <label for = "slide3">I've been sleeping too much, and at odd times.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide3" value = "0">
             </span>
 
             <span id = "span4">
-                <label for= "slide4">I've had a poor appetite and been losing or gaining a lot of weight, eating an unhealthy amount, or skipping meals.</label>
+                <label for= "slide4">I've had a poor appetite and been losing a lot of weight or skipping meals.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide4" value = "0">
             </span>
 
             <span id = "span5">
-                <label for= "slide5">I've been tired even when I just woke up and have less energy overall than I used to.</label>
+                <label for = "slide5">I've been eating a lot, even when I'm not hungry, and gainging a lot of weight.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide5" value = "0">
             </span>
 
             <span id = "span6">
-                <label for= "slide6">I've been feeling bad about myself. I think I've let myself or my friends and family down, and I feel like a failure or a waste.</label>
+                <label for= "slide6">I've been tired even when I just woke up and have less energy overall than I used to.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide6" value = "0">
             </span>
 
             <span id = "span7">
-                <label for= "slide7">I can't concentrate on school, or even on things I like to do that are low-effort, like watching TV.</label>
+                <label for= "slide7">I've been feeling like I've let myself or my friends and family down, like I'm a failure or a waste.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide7" value = "0">
             </span>
 
             <span id = "span8">
-                <label for= "slide8">I've been moving, thinking, or speaking slowly--or I've been so fidgety and restless that I can't sit still.</label>
+                <label for= "slide8">I can't concentrate on schoolwork, or even on things I like to do.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide8" value = "0">
             </span>
 
             <span id = "span9">
-                <label for= "slide9">I think I would be better off dead. I've been thinking about suicide or hurting myself.</label>
+                <label for= "slide9">I've been moving, thinking, or speaking slowly.</label>
                 <input type = "range" min = "1" max = "100" class = "slider" id = "slide9" value = "0">
+            </span>
+
+            <span id = "span10">
+                <label for= "slide10">I've been so fidgety and restless that I can't sit still.</label>
+                <input type = "range" min = "1" max = "100" class = "slider" id = "slide10" value = "0">
+            </span>
+
+            <span id = "span11">
+                <label for = "slide11">I've been hurting myself.</label>
+                <input type = "range" min = "1" max = "100" class = "slider" id = "slide11" value = "0">
+            </span>
+
+            <span id = "span12">
+                <label for= "slide12">I've been thinking seriously about suicide.</label>
+                <input type = "range" min = "1" max = "100" class = "slider" id = "slide12" value = "0">
             </span>
 
 
@@ -156,22 +181,21 @@
 
 
             <span class = "t-f left">Never</span>
-            <span class = "t-f right">Most of the time</span>
+            <span class = "t-f right">Almost always</span>
             <span class = "t-f middle">About half the time<button id = "continue">Continue?</button></span>
-
-
 
         </div>
 
         <div class = "collapsible" id = "toFloof">
             <h3>Floofbunny!</h3>
-            <p>Floofbunny is a program we created to give you a virtual pet. Caring for others can help you care for
-                yourself. Want to play with Floofbunny?<br><br>
+            <p>
+                Floofbunny is a program we created to give you a virtual pet. Caring for others can help you care for
+                yourself, and Floof has no pressure attached. <u>Want to play with your own Floofbunny?</u><br><br>
                 Floofbunny will ask for some information like a username and password, but that's just so we can remember
-                how your Floof looks and so nobody will mess with it. We will <i>never</i> record any information you give
-                us. This website is 100% free and confidential, and nothing you write here will be saved--even what you
-                said on the Check-in can't e found in search history! While we encourage you to tell others if you're
-                depressed or think you might be, we will never do it for you. That's your choice, and your life.
+                how your Floof looks. We will <i>never</i> record any information you give
+                us. This website is 100% free and confidential, and nothing you do here will be saved--even what you
+                said on the Check-in can't be found in search history! While we encourage you to tell others and seek help
+                if you're depressed or think you might be, we will never do it for you.
             </p>
         </div>
     </div>

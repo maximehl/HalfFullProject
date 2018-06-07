@@ -2,7 +2,6 @@ var SLIDE_VALS = [];
 var CURRENT_SLIDE;
 
 $(document).ready(function(){
-    CURRENT_SLIDE = $("#slide1");
     $(".collapsible").each(function(){
         addCollapsibleTriggers($(this));
     });
@@ -52,6 +51,8 @@ $(document).ready(function(){
         resize($(this).parent());
     });
 
+    CURRENT_SLIDE = "slide0";
+
     $("input").each(function(){
         $(this).on("click", function() {
             event.stopPropagation();
@@ -74,12 +75,21 @@ function resize(inp) {
 function toNextItem(inp) {
     var thisSlide;
     var nextSlide;
+    var currentNum;
 
+    console.log(inp);
     //holds all values of sliders for later calculation
-    SLIDE_VALS.push(parseInt(document.getElementById(inp.attr("id")).value));
+    SLIDE_VALS.push(parseInt(document.getElementById(inp).value));
+
 
     //saves current id #
-    var currentNum = parseInt(inp.attr("id")[inp.attr("id").length-1]);
+    //have to make it so it stops at 'fidget' (9)
+    if(CURRENT_SLIDE.length !== 6 || currentNum >= 10) {
+        currentNum = parseInt(inp[inp.length-2]);
+    } else {
+        currentNum = parseInt(inp[inp.length-1]);
+    }
+
 
     //hides this slider/label set
     thisSlide = "#span"+currentNum;
@@ -88,10 +98,10 @@ function toNextItem(inp) {
     //increments current number
     currentNum +=1;
 
-    CURRENT_SLIDE = $("#slide"+currentNum);
+    CURRENT_SLIDE = "slide"+currentNum;
 
     //if this was the last slider,
-    if(currentNum === 10) {
+    if(currentNum === 13) {
         //calculates the numbers
         diagnoseTest(SLIDE_VALS);
     } else {
@@ -130,39 +140,39 @@ function getHeightNeeded(toggleObj){
 
 function diagnoseTest(array) {
     //assigns a weight to each of them--being suicidal is more worrying than insomnia
-    var percentWeights = [.08, .09, .08, .11, .08, .15, .13, .08, .2];
+    var percentWeights = [.5, 1, .5, .5, 1, .75, 1, 1, 1, .75, 1, 2, 2];
     var total = 0;
 
-    //if the value of the 'suicidal' or 'worthless' bar is too high, emergency mode
-    if (array[8] >= 60 || array[6] > 80) {
-        //this will tip the scale up at least one 'level'
-        total += 60;
+    //if the value of the 'suicidal' or 'self harm' bar is too high, emergency mode
+    if (array[12] >= 20 || array[11] >= 20) {
+        total += 70;
     }
 
     //add each array value multiplied by its weight to the total (should be 160 if all full (because of the suicide thing))
-    for (var i = 0; i < 9; i++) {
+    for (var i = 0; i < percentWeights.length; i++) {
         total += array[i] * percentWeights[i]
     }
 
     if (total >= 70) {
-        $("#special").html("Even if you aren't diagnosed with depression, you should talk to someone about how you've" +
-            " been feeling. This isn't a healthy space, and if you get help, you can get out of it. Take a look through" +
-            " the hotlines and warmlines available at the top of this column, and try having a talk with someone you trust" +
-            " or a trained professional about how you feel. Please remember that we care for you! You are important and" +
-            " worth far more than you might think.");
+        $("#special").html("We think you should talk to someone about how you've been feeling. This isn't a healthy space," +
+            " and if you get help, you can get out of it. Take a look through the hotlines and warmlines available at the" +
+            " top of this column, and try having a talk with someone you trust or a trained professional about how you feel." +
+            " Please don't do anything to yourself, and always remember that you are worth far more than you might think.");
         //get help
     } else if (total >= 50) {
         $("#special").html("Even if you aren't diagnosed with depression, it looks like you need to get yourself out of" +
             " the mental space you're in right now. Try 'filling your cup' with things you enjoy doing, spending time" +
             " with people you like, and (as cliche as it sounds) positive thinking--If you want a suggestion, click on" +
-            " 'Fill your cup', and we'll think of something for you! You won't feel like this forever. We believe in you!");
+            " 'Fill your cup', and we'll think of something for you. You should consider sharing how you've been feeling" +
+            " with your friends and family, and keep in mind that you won't feel like this forever. We believe in you!");
         //coping methods
     } else if (total >= 20) {
-        $("#special").html("Even if you aren't diagnosed with depression, you should remind yourself of how important you are." +
+        $("#special").html("It looks like you should remind yourself of how important you are, to others if not always yourself." +
             " Always remember that there are people who love you--try reaching out to some of them. Even if" +
             " you don't think they'll care, give your friends a call or text, or go talk to your parents about how you've" +
             " been feeling--it might help more than you think, and they'll be better able to support you if they know" +
-            " what you need. You are loved--you are worth it--no matter what.");
+            " what you need. You are loved--you are worth it--no matter what. Check out some of the tips, distractions," +
+            " and coping methods in 'Fill your cup', and take care of yourself!");
         //friends and family
     } else {
         $("#special").html("We aren't experts, but we think you are probably healthy. Of course, we are just some strangers" +
@@ -177,4 +187,4 @@ function diagnoseTest(array) {
         $(".t-f").css({"display": "none"});
         //resizes div to fit the result
         resize($("#slidecontainer"));
-}//work pls
+}
