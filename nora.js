@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     $(window).resize(function() {
         clearTimeout(resizeTime);
-        resizeTime = setTimeout(resizingWindow, 1000);
+        resizeTime = setTimeout(resizingWindow, 250);
     });
 
     function resizingWindow() {
@@ -73,27 +73,20 @@ function resize(inp) {
 }
 
 function toNextItem(inp) {
-    var thisSlide;
-    var nextSlide;
     var currentNum;
 
-    console.log(inp);
     //holds all values of sliders for later calculation
     SLIDE_VALS.push(parseInt(document.getElementById(inp).value));
 
-
+    currentNum = parseInt(inp[inp.length-1]);
     //saves current id #
     //have to make it so it stops at 'fidget' (9)
-    if(CURRENT_SLIDE.length !== 6 || currentNum >= 10) {
-        currentNum = parseInt(inp[inp.length-2]);
-    } else {
-        currentNum = parseInt(inp[inp.length-1]);
+    if(inp.length > 6) {
+        currentNum = parseInt("1" + currentNum);
     }
 
-
     //hides this slider/label set
-    thisSlide = "#span"+currentNum;
-    $(thisSlide).css({"display":"none"});
+    $("#span"+currentNum).css({"display":"none"});
 
     //increments current number
     currentNum +=1;
@@ -106,8 +99,7 @@ function toNextItem(inp) {
         diagnoseTest(SLIDE_VALS);
     } else {
         //if not, shows the next slider/label set
-        nextSlide = "#span"+(currentNum).toString();
-        $(nextSlide).css({"display": "inline"});
+        $("#span"+(currentNum).toString()).css({"display": "inline"});
         //and resizes the div to fit
         resize($("#slidecontainer"));
     }
@@ -140,33 +132,38 @@ function getHeightNeeded(toggleObj){
 
 function diagnoseTest(array) {
     //assigns a weight to each of them--being suicidal is more worrying than insomnia
-    var percentWeights = [.5, 1, .5, .5, 1, .75, 1, 1, 1, .75, 1, 2, 2];
+    var percentWeights = [.04, .09, .04, .04, .07, .04, .05, .09, .07, .05, .06, .18, .18];
     var total = 0;
 
     //if the value of the 'suicidal' or 'self harm' bar is too high, emergency mode
     if (array[12] >= 20 || array[11] >= 20) {
         total += 70;
     }
-
-    //add each array value multiplied by its weight to the total (should be 160 if all full (because of the suicide thing))
+    console.log(array);
+    //add each array value multiplied by its weight to the total
     for (var i = 0; i < percentWeights.length; i++) {
         total += array[i] * percentWeights[i]
     }
+    console.log(total);
+    $("#to-be-hidden").css({"display":"none"});
 
-    if (total >= 70) {
+    if (total >= 75) {
         $("#special").html("We think you should talk to someone about how you've been feeling. This isn't a healthy space," +
             " and if you get help, you can get out of it. Take a look through the hotlines and warmlines available at the" +
             " top of this column, and try having a talk with someone you trust or a trained professional about how you feel." +
-            " Please don't do anything to yourself, and always remember that you are worth far more than you might think.");
+            " The coping methods in 'Fill your cup' might help, but we encourage you to do things with friends and spend time" +
+            " in nature--you need to reset your brain and remind yourself how good life can be. You are loved, and you are worth" +
+            " loving. Please take care of yourself, and always remember that you are worth far more than you might think.");
         //get help
     } else if (total >= 50) {
-        $("#special").html("Even if you aren't diagnosed with depression, it looks like you need to get yourself out of" +
-            " the mental space you're in right now. Try 'filling your cup' with things you enjoy doing, spending time" +
-            " with people you like, and (as cliche as it sounds) positive thinking--If you want a suggestion, click on" +
-            " 'Fill your cup', and we'll think of something for you. You should consider sharing how you've been feeling" +
-            " with your friends and family, and keep in mind that you won't feel like this forever. We believe in you!");
+        $("#special").html("It looks like you need to get yourself out of the mental space you're in right now. Try 'filling" +
+            " your cup' with things you enjoy doing, spending time with people you like, and (as cliche as it sounds)" +
+            " positive thinking--If you want a suggestion, click on 'Fill your cup', and we'll think of something for you." +
+            " You should consider sharing how you've been feeling with your friends and family, and keep in mind that you" +
+            " won't feel like this forever--if it doesn't stop soon, or if it gets worse, you should definitely consider getting" +
+            " help from a better source than us, like a therapist.");
         //coping methods
-    } else if (total >= 20) {
+    } else if (total >= 25) {
         $("#special").html("It looks like you should remind yourself of how important you are, to others if not always yourself." +
             " Always remember that there are people who love you--try reaching out to some of them. Even if" +
             " you don't think they'll care, give your friends a call or text, or go talk to your parents about how you've" +
