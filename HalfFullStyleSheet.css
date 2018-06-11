@@ -1,3 +1,13 @@
+a{
+    color: #0000EE;
+}
+a:visited{
+    color: #0000EE;
+}
+a:hover{
+    color: #00004f;
+}
+
 body {
     background-color: #ffffff;
     font-family: sans-serif;
