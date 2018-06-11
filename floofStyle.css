@@ -1,0 +1,181 @@
+body{
+    font-family: Arial, sans-serif;
+    width: 700px;
+    user-select: none;
+}
+
+#fullScreen{
+    background-color: #e5e5e5;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#centerBox{
+    min-width:400px;
+}
+
+button{
+    outline:0;
+    margin: 0;
+    /*margin-top: 10px;*/
+}
+
+#screen{
+    width: 400px;
+    height:300px;
+    border:2px solid black;
+    margin-right:20px;
+    margin-top: 40px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#floor{
+    margin: 50% auto;
+    height: 0;
+    width: 60%;
+    position: relative;
+    border-bottom: 90px solid tan;
+    border-right:50px solid transparent;
+    border-left:50px solid transparent;
+}
+
+#floofTest{
+    width:40px;
+    position: absolute;
+    top:240px;
+    left: 190px;
+    transition: 0.5s ease-out;
+    display: none;
+}
+
+#sideMenus{
+    display: inline-block;
+    /*width:300px;*/
+    vertical-align: top;
+    text-align: center;
+}
+
+.error{
+    display: none;
+    background-color: #ff4a46;
+    color: black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    width: auto;
+}
+
+.loadGIF{
+    width:30px;
+    margin-top: 10px;
+    display: none;
+}
+
+.menu{
+    display: inline-block;
+    background-color: lightgrey;
+    border-radius: 15px;
+    padding:20px;
+    margin: 10px 0;
+}
+
+/*#floofThoughts{
+    vertical-align: top;
+}*/
+
+#thoughtContainer{
+    overflow: hidden;
+    /*height:4em;*/
+    height:64px;
+    width:200px;
+    transition:0.5s;
+    padding: 0;
+}
+
+#enterThought, #exitThought{
+    display: block;
+    position: relative;
+    /*height:100px;*/
+    width:200px;
+    margin:16px 0;
+    text-align: center;
+    transition:0.5s ease-out;
+    top:0;
+    opacity: 1;
+}
+
+label{
+    text-align: center;
+    font-size: small;
+    display: block;
+}
+
+#floof{
+    width:40px;
+    height:30px;
+    position: relative;
+    top:-260px;
+    left:180px;
+    border-radius: 20px 20px 12px 12px;
+    background-color: green;
+    transition: 0.5s ease-out;
+    /*tagHere make this work*/
+}
+
+#eyeLeft, #eyeRight{
+    width: 5px;
+    height: 8px;
+    position: relative;
+    border-radius: 3px;
+    background-color: black;
+    transition: 0.5s;
+}
+#eyeLeft{
+    left:10px;
+    top:15px;
+}
+#eyeRight{
+    left:35px;
+    top:7px;
+}
+
+#footer{
+    width: 100%;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 15px 15px 0 0;
+    vertical-align: bottom;
+    padding: 10px 0;
+}
+
+a{
+    color: #0000EE;
+}
+a:visited{
+    color: #0000EE;
+}
+a:hover{
+    color: #00004f;
+}
+
+.food{
+    background-color: #522911;
+    border-radius: 3px;
+    width: 6px;
+    height:6px;
+    position: absolute;
+    transition: top 0s, opacity 0.2s;
+    top:0;
+    margin:0;
+    opacity: 0;
+}
