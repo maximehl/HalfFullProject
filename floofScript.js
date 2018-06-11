@@ -481,8 +481,8 @@ function AJAXCall(getPost, loc, action, postData){
             success: function(data){
                 console.log(data);
 
+                $("#signInLoad").hide();
                 if(action==="signIn"){
-                    $("#signInLoad").hide();
                     if($.isEmptyObject(data)){
                         $("#signError").css("display", "inline-block");
                     }else{
